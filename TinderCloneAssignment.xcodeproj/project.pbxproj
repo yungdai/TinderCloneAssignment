@@ -29,6 +29,8 @@
 		1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */; };
 		1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */; };
 		1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */; };
+		1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11251B13C65100DF12E7 /* Accounts.framework */; };
+		1AAC11281B13C65C00DF12E7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneAssignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		1AAC11251B13C65100DF12E7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAC11281B13C65C00DF12E7 /* CFNetwork.framework in Frameworks */,
+				1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */,
 				1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */,
 				1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */,
 				1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */,
@@ -130,7 +136,6 @@
 				1AAC10F71B13B20500DF12E7 /* Controller */,
 				1AAC10F61B13B1F700DF12E7 /* Frameworks */,
 				1A2B44F31B1391A600F4EC12 /* AppDelegate.swift */,
-				1AAC11171B13BC7D00DF12E7 /* TinderCloneAssignment.h */,
 				1A2B44F51B1391A600F4EC12 /* ViewController.swift */,
 				1A2B44F71B1391A600F4EC12 /* Main.storyboard */,
 				1A2B44FA1B1391A600F4EC12 /* Images.xcassets */,
@@ -143,6 +148,7 @@
 		1A2B44F11B1391A600F4EC12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC11171B13BC7D00DF12E7 /* TinderCloneAssignment.h */,
 				1A2B44F21B1391A600F4EC12 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -169,6 +175,8 @@
 		1AAC10F61B13B1F700DF12E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */,
+				1AAC11251B13C65100DF12E7 /* Accounts.framework */,
 				1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */,
 				1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */,
 				1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */,
