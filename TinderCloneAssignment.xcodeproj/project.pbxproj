@@ -13,6 +13,22 @@
 		1A2B44FB1B1391A600F4EC12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B44FA1B1391A600F4EC12 /* Images.xcassets */; };
 		1A2B44FE1B1391A700F4EC12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B44FC1B1391A700F4EC12 /* LaunchScreen.xib */; };
 		1A2B450A1B1391A700F4EC12 /* TinderCloneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B45091B1391A700F4EC12 /* TinderCloneAssignmentTests.swift */; };
+		1AAC10FC1B13B27500DF12E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */; };
+		1AAC11001B13B2C300DF12E7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC10FD1B13B2C300DF12E7 /* Bolts.framework */; };
+		1AAC11011B13B2C300DF12E7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC10FE1B13B2C300DF12E7 /* Parse.framework */; };
+		1AAC11021B13B2C300DF12E7 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC10FF1B13B2C300DF12E7 /* ParseFacebookUtilsV4.framework */; };
+		1AAC11041B13B2DA00DF12E7 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11031B13B2DA00DF12E7 /* libstdc++.6.dylib */; };
+		1AAC11061B13B2E400DF12E7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11051B13B2E400DF12E7 /* MobileCoreServices.framework */; };
+		1AAC11081B13B2ED00DF12E7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11071B13B2ED00DF12E7 /* SystemConfiguration.framework */; };
+		1AAC110C1B13B3E200DF12E7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11091B13B3E200DF12E7 /* FBSDKCoreKit.framework */; };
+		1AAC110D1B13B3E200DF12E7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC110A1B13B3E200DF12E7 /* FBSDKLoginKit.framework */; };
+		1AAC110E1B13B3E200DF12E7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC110B1B13B3E200DF12E7 /* FBSDKShareKit.framework */; };
+		1AAC11191B13BC8F00DF12E7 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */; };
+		1AAC111B1B13BC9A00DF12E7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */; };
+		1AAC111D1B13BCA800DF12E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111C1B13BCA800DF12E7 /* Security.framework */; };
+		1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */; };
+		1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */; };
+		1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +52,24 @@
 		1A2B45031B1391A700F4EC12 /* TinderCloneAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B45081B1391A700F4EC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B45091B1391A700F4EC12 /* TinderCloneAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneAssignmentTests.swift; sourceTree = "<group>"; };
+		1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1AAC10FD1B13B2C300DF12E7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1AAC10FE1B13B2C300DF12E7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1AAC10FF1B13B2C300DF12E7 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		1AAC11031B13B2DA00DF12E7 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		1AAC11051B13B2E400DF12E7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1AAC11071B13B2ED00DF12E7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1AAC11091B13B3E200DF12E7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1AAC110A1B13B3E200DF12E7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1AAC110B1B13B3E200DF12E7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		1AAC11171B13BC7D00DF12E7 /* TinderCloneAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinderCloneAssignment.h; sourceTree = SOURCE_ROOT; };
+		1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1AAC111C1B13BCA800DF12E7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneAssignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +77,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */,
+				1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */,
+				1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */,
+				1AAC111D1B13BCA800DF12E7 /* Security.framework in Frameworks */,
+				1AAC111B1B13BC9A00DF12E7 /* libsqlite3.dylib in Frameworks */,
+				1AAC11191B13BC8F00DF12E7 /* libz.1.1.3.dylib in Frameworks */,
+				1AAC11081B13B2ED00DF12E7 /* SystemConfiguration.framework in Frameworks */,
+				1AAC11061B13B2E400DF12E7 /* MobileCoreServices.framework in Frameworks */,
+				1AAC11041B13B2DA00DF12E7 /* libstdc++.6.dylib in Frameworks */,
+				1AAC11011B13B2C300DF12E7 /* Parse.framework in Frameworks */,
+				1AAC110C1B13B3E200DF12E7 /* FBSDKCoreKit.framework in Frameworks */,
+				1AAC110E1B13B3E200DF12E7 /* FBSDKShareKit.framework in Frameworks */,
+				1AAC11001B13B2C300DF12E7 /* Bolts.framework in Frameworks */,
+				1AAC110D1B13B3E200DF12E7 /* FBSDKLoginKit.framework in Frameworks */,
+				1AAC11021B13B2C300DF12E7 /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +126,11 @@
 		1A2B44F01B1391A600F4EC12 /* TinderCloneAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC10F81B13B20B00DF12E7 /* Model */,
+				1AAC10F71B13B20500DF12E7 /* Controller */,
+				1AAC10F61B13B1F700DF12E7 /* Frameworks */,
 				1A2B44F31B1391A600F4EC12 /* AppDelegate.swift */,
+				1AAC11171B13BC7D00DF12E7 /* TinderCloneAssignment.h */,
 				1A2B44F51B1391A600F4EC12 /* ViewController.swift */,
 				1A2B44F71B1391A600F4EC12 /* Main.storyboard */,
 				1A2B44FA1B1391A600F4EC12 /* Images.xcassets */,
@@ -98,6 +151,7 @@
 		1A2B45061B1391A700F4EC12 /* TinderCloneAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */,
 				1A2B45091B1391A700F4EC12 /* TinderCloneAssignmentTests.swift */,
 				1A2B45071B1391A700F4EC12 /* Supporting Files */,
 			);
@@ -110,6 +164,44 @@
 				1A2B45081B1391A700F4EC12 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AAC10F61B13B1F700DF12E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */,
+				1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */,
+				1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */,
+				1AAC111C1B13BCA800DF12E7 /* Security.framework */,
+				1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */,
+				1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */,
+				1AAC11031B13B2DA00DF12E7 /* libstdc++.6.dylib */,
+				1AAC11051B13B2E400DF12E7 /* MobileCoreServices.framework */,
+				1AAC11071B13B2ED00DF12E7 /* SystemConfiguration.framework */,
+				1AAC11091B13B3E200DF12E7 /* FBSDKCoreKit.framework */,
+				1AAC110A1B13B3E200DF12E7 /* FBSDKLoginKit.framework */,
+				1AAC110B1B13B3E200DF12E7 /* FBSDKShareKit.framework */,
+				1AAC10FD1B13B2C300DF12E7 /* Bolts.framework */,
+				1AAC10FE1B13B2C300DF12E7 /* Parse.framework */,
+				1AAC10FF1B13B2C300DF12E7 /* ParseFacebookUtilsV4.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1AAC10F71B13B20500DF12E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1AAC10F81B13B20B00DF12E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAC10FC1B13B27500DF12E7 /* LoginViewController.swift in Sources */,
 				1A2B44F61B1391A600F4EC12 /* ViewController.swift in Sources */,
 				1A2B44F41B1391A600F4EC12 /* AppDelegate.swift in Sources */,
 			);
@@ -342,9 +435,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TinderCloneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TinderCloneAssignment.h;
+				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +451,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TinderCloneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TinderCloneAssignment.h;
 			};
 			name = Release;
 		};
@@ -362,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -373,6 +478,8 @@
 				INFOPLIST_FILE = TinderCloneAssignmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinderCloneAssignmentTests/TinderCloneAssignmentTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinderCloneAssignment.app/TinderCloneAssignment";
 			};
 			name = Debug;
@@ -381,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -388,6 +496,7 @@
 				INFOPLIST_FILE = TinderCloneAssignmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinderCloneAssignmentTests/TinderCloneAssignmentTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinderCloneAssignment.app/TinderCloneAssignment";
 			};
 			name = Release;
@@ -411,6 +520,7 @@
 				1A2B450F1B1391A700F4EC12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A2B45101B1391A700F4EC12 /* Build configuration list for PBXNativeTarget "TinderCloneAssignmentTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +529,7 @@
 				1A2B45121B1391A700F4EC12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
