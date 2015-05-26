@@ -24,8 +24,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
-            // Do stuff with the user
             println("sending user to the main app screen because he's a current user")
+            
         } else {
             // Show the signup or login screen
             return
@@ -34,7 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
 
     }
     
-
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -85,6 +84,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
     
 }

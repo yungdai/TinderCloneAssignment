@@ -34,18 +34,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Main App View Controller-->
         <scene sceneID="vCu-lG-GZG">
             <objects>
-                <viewController id="6BG-Oh-qkc" sceneMemberID="viewController">
+                <viewController id="6BG-Oh-qkc" customClass="MainAppViewController" customModule="TinderCloneAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZhG-uA-UXT"/>
                         <viewControllerLayoutGuide type="bottom" id="pkB-L6-4kW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Sj4-zp-M5t">
+                    <view key="view" contentMode="scaleToFill" id="Sj4-zp-M5t" customClass="Main">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main App Screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-rc-MuM">
+                                <rect key="frame" x="182" y="259" width="236" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="ilL-vS-RkD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lcG-rc-MuM" firstAttribute="centerX" secondItem="Sj4-zp-M5t" secondAttribute="centerX" id="XG8-zW-zXQ"/>
+                            <constraint firstItem="lcG-rc-MuM" firstAttribute="top" secondItem="ZhG-uA-UXT" secondAttribute="bottom" constant="239" id="azD-24-wtX"/>
+                            <constraint firstItem="lcG-rc-MuM" firstAttribute="centerY" secondItem="Sj4-zp-M5t" secondAttribute="centerY" id="uOy-h2-oGo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQE-rF-ep5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,7 @@
 		1A2B44FB1B1391A600F4EC12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B44FA1B1391A600F4EC12 /* Images.xcassets */; };
 		1A2B44FE1B1391A700F4EC12 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B44FC1B1391A700F4EC12 /* LaunchScreen.xib */; };
 		1A2B450A1B1391A700F4EC12 /* TinderCloneAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B45091B1391A700F4EC12 /* TinderCloneAssignmentTests.swift */; };
+		1AAA01DB1B140D6F00C01884 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAA01DA1B140D6F00C01884 /* MainAppViewController.swift */; };
 		1AAC10FC1B13B27500DF12E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */; };
 		1AAC11001B13B2C300DF12E7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC10FD1B13B2C300DF12E7 /* Bolts.framework */; };
 		1AAC11011B13B2C300DF12E7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC10FE1B13B2C300DF12E7 /* Parse.framework */; };
@@ -52,6 +53,7 @@
 		1A2B45031B1391A700F4EC12 /* TinderCloneAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B45081B1391A700F4EC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B45091B1391A700F4EC12 /* TinderCloneAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneAssignmentTests.swift; sourceTree = "<group>"; };
+		1AAA01DA1B140D6F00C01884 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAC10FD1B13B2C300DF12E7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1AAC10FE1B13B2C300DF12E7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				1AAC10FB1B13B27500DF12E7 /* LoginViewController.swift */,
+				1AAA01DA1B140D6F00C01884 /* MainAppViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAC10FC1B13B27500DF12E7 /* LoginViewController.swift in Sources */,
+				1AAA01DB1B140D6F00C01884 /* MainAppViewController.swift in Sources */,
 				1A2B44F41B1391A600F4EC12 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
