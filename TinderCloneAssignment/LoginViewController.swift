@@ -21,27 +21,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     let permissions = ["public_profile", "email", "user_friends"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
+        
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            // Do stuff with the user
+            println("sending user to the main app screen because he's a current user")
+        } else {
+            // Show the signup or login screen
+            return
         }
-        else
-        {
-            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions as [AnyObject]) {
-                (user: PFUser?, error: NSError?) -> Void in
-                if let user = user {
-                    if user.isNew {
-                        println("User signed up and logged in through Facebook!")
-                    } else {
-                        println("User logged in through Facebook!")
-                    }
-                } else {
-                    println("Uh oh. The user cancelled the Facebook login.")
-                }
-            }
 
-        }
+
     }
     
 
