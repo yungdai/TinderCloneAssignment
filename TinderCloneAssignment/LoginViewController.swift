@@ -70,13 +70,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                 } else {
                     println("Uh oh. The user cancelled the Facebook login.")
                 }
+                
             }
             println("Permission was allowed go to the next view")
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                
+                println("access to user's email was granted")
                 // print this out if the email was granted
                
             }
@@ -85,6 +86,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
+        PFUser.logOut()
+        var currentUser = PFUser.currentUser()
     }
 
     
