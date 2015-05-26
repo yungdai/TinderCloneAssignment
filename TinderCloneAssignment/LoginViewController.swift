@@ -31,9 +31,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             return
         }
 
-
     }
-    
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -79,11 +77,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         var currentUser = PFUser.currentUser()
     }
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     /*
     // MARK: - Navigation
     
@@ -94,5 +87,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     }
     */
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
 }
