@@ -16,18 +16,26 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 
+
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     let loginButton = FBSDKLoginButton()
     let permissions = ["public_profile", "email", "user_friends"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // push services test
+        var push = PFPush()
+        push.setMessage("Testing Push Notificaiton")
+        push.sendPushInBackground()
         
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             println("sending user to the main app screen because he's a current user")
-            
+            self.gotoMainScreen()
         } else {
             // Show the signup or login screen
+            
             return
         }
 
@@ -54,6 +62,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                     } else {
                         println("User logged in through Facebook!")
                     }
+                    self.gotoMainScreen()
                 } else {
                     println("Uh oh. The user cancelled the Facebook login.")
                 }
@@ -74,18 +83,24 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
         PFUser.logOut()
+        // do I need this?
         var currentUser = PFUser.currentUser()
     }
 
-    /*
+    
+    func gotoMainScreen(){
+        self.performSegueWithIdentifier("showMainApp", sender: nil)
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    // Get the new view controller using segue.destinationViewController.
+//    // Pass the selected object to the new view controller.
+//        
+//        
+//    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
