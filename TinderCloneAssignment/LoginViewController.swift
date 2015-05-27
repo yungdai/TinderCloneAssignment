@@ -35,7 +35,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             self.gotoMainScreen()
         } else {
             // Show the signup or login screen
-            
             return
         }
 
@@ -53,6 +52,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             println("user pressed the cancel button")
             
         } else {
+            
             println("Putting the user to parse!")
             PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions as [AnyObject]) {
                 (user: PFUser?, error: NSError?) -> Void in
@@ -62,6 +62,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                     } else {
                         println("User logged in through Facebook!")
                     }
+//                    var userData = NSDictionary(objectsAndKeys: self.permissions)
+                    
                     self.gotoMainScreen()
                 } else {
                     println("Uh oh. The user cancelled the Facebook login.")
@@ -91,15 +93,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     func gotoMainScreen(){
         self.performSegueWithIdentifier("showMainApp", sender: nil)
     }
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    // Get the new view controller using segue.destinationViewController.
-//    // Pass the selected object to the new view controller.
-//        
-//        
-//    }
 
     
     override func didReceiveMemoryWarning() {

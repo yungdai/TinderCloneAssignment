@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MyInformationViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class MyInformationViewController: UIViewController {
     // assigne the menu button to the viewcontroller
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var facebookImage: UIImageView!
+    @IBOutlet weak var customImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

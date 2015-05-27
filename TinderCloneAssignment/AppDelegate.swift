@@ -70,14 +70,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
             application.registerForRemoteNotificationTypes(types)
         }
-        
+        // reveal the main app if you are a current user
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if PFUser.currentUser() != nil {
             let revealVC = storyBoard .instantiateViewControllerWithIdentifier("mainScreen") as! UIViewController
             self.window?.rootViewController = revealVC
-        } else
-        {
-            self.window?.rootViewController = storyBoard.instantiateInitialViewController() as! UIViewController
+        } else {
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
         }
 
         return true
@@ -133,10 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
     }
-//    
-//    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-//        return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication, session:PFFacebookUtils.session())
-//    }
 
     
     func applicationWillResignActive(application: UIApplication) {

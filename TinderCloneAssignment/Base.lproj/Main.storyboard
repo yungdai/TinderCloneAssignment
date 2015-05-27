@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -17,15 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="200" y="275" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="db7-fI-7jb"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to my Tinder Clone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
-                                <rect key="frame" x="76" y="55" width="448" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to my Tinder Clone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
+                                <rect key="frame" x="141" y="116" width="318" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="d4q-Fk-Qk5"/>
+                                    <constraint firstAttribute="height" constant="47" id="l8C-wc-5YP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,8 +36,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="JXQ-bN-Ei4"/>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="tfX-1W-XYF"/>
+                            <constraint firstItem="VRy-jl-yqs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="cKZ-x0-kUx"/>
+                            <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="plB-eJ-NU1"/>
+                            <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="iuY-Nm-sy2" secondAttribute="centerX" id="qwj-co-tHg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -43,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="441"/>
+            <point key="canvasLocation" x="556" y="441"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="vCu-lG-GZG">
@@ -167,7 +171,7 @@
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zaL-qn-gBU" userLabel="Logout Button View Cell">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zaL-qn-gBU" id="O7N-yE-VAW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="logout" tableViewCell="zaL-qn-gBU" id="O7N-yE-VAW">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7w-rC-ACB">
@@ -191,6 +195,10 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="logout" destination="O7N-yE-VAW" id="7iD-GN-2bD"/>
+                        <outlet property="logoutCell" destination="O7N-yE-VAW" id="Utd-CR-Zyn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yv-Kx-1iP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +207,6 @@
         <!--My Matches-->
         <scene sceneID="swT-k6-biY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m0Y-8z-H32" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="X8a-dI-Cko" customClass="MyMatchesViewController" customModule="TinderCloneAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iuh-uM-q2p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -227,6 +234,7 @@
                         <outlet property="menuButton" destination="pqO-Hv-KLX" id="6D0-co-Uxa"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0Y-8z-H32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3702" y="441"/>
         </scene>
@@ -282,19 +290,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-SP-yAw">
-                                <rect key="frame" x="16" y="94" width="116" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-SP-yAw">
+                                <rect key="frame" x="263" y="64" width="75" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANW-Md-qVe">
+                                <rect key="frame" x="16" y="90" width="106" height="117"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPv-4A-JQw">
+                                <rect key="frame" x="151" y="90" width="106" height="117"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook Picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfn-Co-5TN">
+                                <rect key="frame" x="16" y="215" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-mw-pLF">
+                                <rect key="frame" x="154" y="211" width="101" height="30"/>
+                                <state key="normal" title="Custom Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Th-SP-yAw" firstAttribute="top" secondItem="IWp-eJ-nKR" secondAttribute="bottom" id="ev9-dG-nQq"/>
+                            <constraint firstItem="0Th-SP-yAw" firstAttribute="centerX" secondItem="nHA-hj-8P0" secondAttribute="centerX" id="lSM-OB-gyF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Information" id="Xjf-LN-7eJ">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="3nA-1k-i7T"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="customImage" destination="IPv-4A-JQw" id="gWE-cQ-1SB"/>
+                        <outlet property="facebookImage" destination="ANW-Md-qVe" id="W3y-G3-d3Q"/>
                         <outlet property="menuButton" destination="3nA-1k-i7T" id="Zmr-u6-gYv"/>
                     </connections>
                 </viewController>
@@ -305,7 +337,6 @@
         <!--Main Application-->
         <scene sceneID="Pbn-Iy-9Lo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-d9-U9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="j2O-U6-PXd" userLabel="Main Application" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8BH-jr-8ex">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -315,6 +346,7 @@
                         <segue destination="vjV-pL-LZR" kind="relationship" relationship="rootViewController" id="BG4-T5-yEp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-d9-U9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2850" y="-285"/>
         </scene>
@@ -339,6 +371,6 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2LM-L3-Lcc"/>
+        <segue reference="9l9-Aj-PfD"/>
     </inferredMetricsTieBreakers>
 </document>
