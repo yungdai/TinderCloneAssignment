@@ -62,10 +62,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                     } else {
                         println("User logged in through Facebook!")
                     }
+                    let request = FBSDKGraphRequest(graphPath: "me", parameters: nil)
 //                    var userData = NSDictionary(objectsAndKeys: self.permissions)
-                    
+                    self.getFBUserData()
                     self.gotoMainScreen()
                 } else {
+                    
+                    
                     println("Uh oh. The user cancelled the Facebook login.")
                 }
                 
@@ -79,6 +82,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                 // print this out if the email was granted
                
             }
+        }
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.currentAccessToken()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if (error == nil){
+                    println(result)
+                }
+            })
         }
     }
     
