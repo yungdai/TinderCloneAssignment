@@ -35,7 +35,6 @@
 		1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */; };
 		1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11251B13C65100DF12E7 /* Accounts.framework */; };
 		1AAC11281B13C65C00DF12E7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */; };
-		1AFD88921B1603D600A37B7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFD88911B1603D600A37B7A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneAssignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AAC11251B13C65100DF12E7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		1AFD88911B1603D600A37B7A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +230,6 @@
 		1AAC10F81B13B20B00DF12E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1AFD88911B1603D600A37B7A /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 				1AAC10FC1B13B27500DF12E7 /* LoginViewController.swift in Sources */,
 				1AAA01DB1B140D6F00C01884 /* MainAppViewController.swift in Sources */,
 				1A2B44F41B1391A600F4EC12 /* AppDelegate.swift in Sources */,
-				1AFD88921B1603D600A37B7A /* User.swift in Sources */,
 				1A97B58E1B14B42600B5861D /* SWRevealViewController.m in Sources */,
 				1A97B5C21B14EEFA00B5861D /* MyMatchesViewController.swift in Sources */,
 				1A97B5C01B14DE4900B5861D /* MyInformationViewController.swift in Sources */,

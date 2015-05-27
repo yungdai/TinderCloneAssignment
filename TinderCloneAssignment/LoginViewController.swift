@@ -20,6 +20,7 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     let loginButton = FBSDKLoginButton()
     let permissions = ["public_profile", "email", "user_friends"]
+    let userDefauls = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +60,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         } else {
             
             println("Putting the user to parse!")
-            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions as [AnyObject]) {
-                (user: PFUser?, error: NSError?) -> Void in
+            PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block: { (user: PFUser?, error: NSError?) -> Void in
                 if let parseUser = user {
                     if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
@@ -79,29 +79,34 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 // save the facebook name and email data to parseUser
                                 parseUser["name"] = result["name"]
                                 parseUser["email"] = result["email"]
+                                
+                                // create a more about me field in parse
+                                parseUser["moreAboutMe"] = ""
+                                
+                                // sending the data to NSUserDefaults as well
+                                
                                 // sending the facebook picture to parse as a string
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
                                     picture = pictureData["url"] as? String {
                                         parseUser["photo"] = picture
+                                        
+                                        
                                 }
                                 parseUser.saveInBackground()
+                                println("Parse User Saved")
                             }
                         })
-
+                        
                     }
-                    let request = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-//                    var userData = NSDictionary(objectsAndKeys: self.permissions)
-                    self.getFBUserData()
                     self.gotoMainScreen()
                 } else {
                     
                     
                     println("Uh oh. The user cancelled the Facebook login.")
                 }
-                
-            }
-            println("Permission was allowed go to the next view")
+            })
+                    println("Permission was allowed go to the next view")
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
@@ -113,15 +118,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
     
-    func getFBUserData(){
-        if((FBSDKAccessToken.currentAccessToken()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                if (error == nil){
-                    println(result)
-                }
-            })
-        }
-    }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
