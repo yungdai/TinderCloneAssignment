@@ -37,11 +37,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             // Show the signup or login screen
             return
         }
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            println("User is already logged in go to the next viewcontroller")
+        
+        }
 
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        println("User Logged In as a Facebook user")
         
         if ((error) != nil)
         {
@@ -56,11 +61,34 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             println("Putting the user to parse!")
             PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions as [AnyObject]) {
                 (user: PFUser?, error: NSError?) -> Void in
-                if let user = user {
-                    if user.isNew {
+                if let parseUser = user {
+                    if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
                     } else {
                         println("User logged in through Facebook!")
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=email,name,picture", parameters: nil)
+                        graphRequest.startWithCompletionHandler({
+                            (connection, result, error) -> Void in
+                            if (error != nil)
+                            {
+                                // display the error message
+                                println("Error: \(error)")
+                            } else
+                            {
+                                // parsing the facebook data from the graph API and saving it to parse
+                                // save the facebook name and email data to parseUser
+                                parseUser["name"] = result["name"]
+                                parseUser["email"] = result["email"]
+                                // sending the facebook picture to parse as a string
+                                if let pictureResult = result["picture"] as? NSDictionary,
+                                    pictureData = pictureResult["data"] as? NSDictionary,
+                                    picture = pictureData["url"] as? String {
+                                        parseUser["photo"] = picture
+                                }
+                                parseUser.saveInBackground()
+                            }
+                        })
+
                     }
                     let request = FBSDKGraphRequest(graphPath: "me", parameters: nil)
 //                    var userData = NSDictionary(objectsAndKeys: self.permissions)
