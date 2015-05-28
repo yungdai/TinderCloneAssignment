@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app would like to always use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app would like to use your location when in use</string>
+	<key>NSLocationUsageDescription</key>
+	<string>This app would like to use your location!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
