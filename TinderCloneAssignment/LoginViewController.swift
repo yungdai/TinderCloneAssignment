@@ -72,7 +72,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                         
                     } else {
                         println("User logged in through Facebook!")
-                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=email,name,picture", parameters: nil)
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,gender,email,name,picture", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
@@ -85,7 +85,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 // save the facebook name and email data to parseUser
                                 parseUser["name"] = result["name"]
                                 parseUser["email"] = result["email"]
-                                
+                                parseUser["first_name"] = result["first_name"]
+                                parseUser["gender"] = result["gender"]
                                 
                                 // test to make sure that the moreAboutMe column is empty before it's init
                                 if parseUser["moreAboutMe"] != nil {

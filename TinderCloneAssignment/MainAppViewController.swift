@@ -26,6 +26,8 @@ class MainAppViewController: UIViewController {
     }
     
     @IBOutlet weak var cardBackgroundView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var moreAboutMeBox: UITextView!
   
     
     
@@ -45,19 +47,38 @@ class MainAppViewController: UIViewController {
         super.viewDidLoad()
         frame = CGRectZero
         
-        cardImage.image = UIImage(named: "mario.jpg")
+//        cardImage.image = UIImage(named: "mario.jpg")
         // giving the image a circle style
         // add a corner radius to our image
         cardImage.layer.cornerRadius = cardImage.frame.size.width / 2
         cardImage.clipsToBounds = true
 
+        if let currentUser = PFUser.currentUser(),
+            let first_name = currentUser["first_name"] as? String,
+            let urlString = currentUser["photo"] as? String,
+            let moreAboutMe = currentUser["moreAboutMe"] as? String {
+                self.nameLabel.text = first_name
+                self.moreAboutMeBox.text = moreAboutMe
+//
+                // parse the photo URL into data for the UIImageView
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                    let data = NSData(contentsOfURL: NSURL(string: urlString)!)
+                    dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                        self.cardImage.image = UIImage(data: data!)
+                    })
+                })
+                
+        }
         // get the current location and sent to Parse
         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
             if let user = PFUser.currentUser() {
                 user["currentLocation"] = geoPoint
                 user.saveInBackground()
             }
+            
         }
+        
+        
 
         // this code is for the SWRevealViewController Code API
         let revealVC = self.revealViewController()
@@ -144,6 +165,8 @@ class MainAppViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
     }
 
 }
