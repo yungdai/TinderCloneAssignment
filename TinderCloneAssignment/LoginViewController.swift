@@ -83,7 +83,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 // create a more about me field in parse 
                                 // might actually erase something you may have saved in the moreAboutMe column.
                                 // TODO: Will have to test later
-                                parseUser["moreAboutMe"] = ""
+                                if parseUser["moreAboutMe"] != nil {
+                                    println("didn't erase moreAboutme")
+                                    return
+                                } else {
+                                    parseUser["moreAboutMe"] = ""
+                                    println("moreAboutMe reset")
+                                }
                                 
                                 // sending the data to NSUserDefaults as well
                                 
