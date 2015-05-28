@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         push.sendPushInBackground()
         
         var currentUser = PFUser.currentUser()
-        if currentUser != nil {
+        if currentUser?.sessionToken != nil {
             println("sending user to the main app screen because he's a current user")
             self.gotoMainScreen()
         } else {
@@ -80,7 +80,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 parseUser["name"] = result["name"]
                                 parseUser["email"] = result["email"]
                                 
-                                // create a more about me field in parse
+                                // create a more about me field in parse 
+                                // might actually erase something you may have saved in the moreAboutMe column.
+                                // TODO: Will have to test later
                                 parseUser["moreAboutMe"] = ""
                                 
                                 // sending the data to NSUserDefaults as well

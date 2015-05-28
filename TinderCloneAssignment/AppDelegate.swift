@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // reveal the main app if you are a current user
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        if PFUser.currentUser() != nil {
+        if PFUser.currentUser()?.sessionToken != nil {
             let revealVC = storyBoard .instantiateViewControllerWithIdentifier("mainScreen") as! UIViewController
             self.window?.rootViewController = revealVC
         } else {

@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to my Tinder Clone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to my Tinder Clone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
                                 <rect key="frame" x="141" y="116" width="318" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="BFk-ub-BeB"/>
-                                    <constraint firstAttribute="width" constant="318" id="xif-TN-XZJ"/>
+                                    <constraint firstAttribute="height" constant="47" id="8yr-Su-HhD"/>
+                                    <constraint firstAttribute="width" constant="318" id="Nac-7U-y5L"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="200" y="275" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -37,14 +37,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="200" id="0gS-wQ-T2i"/>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="99K-Wa-JQZ"/>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="iuY-Nm-sy2" secondAttribute="centerX" id="Cqk-zV-vvM"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iuY-Nm-sy2" secondAttribute="bottom" constant="275" id="EJ8-rJ-Dul"/>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIJ-m4-LEg"/>
-                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w1L-FF-bF7"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="6BG-Oh-qkc" kind="presentation" identifier="showMainApp" id="rlk-tR-U43"/>
