@@ -69,6 +69,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                 if let parseUser = user {
                     if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
+                        
                     } else {
                         println("User logged in through Facebook!")
                         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=email,name,picture", parameters: nil)
@@ -85,9 +86,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 parseUser["name"] = result["name"]
                                 parseUser["email"] = result["email"]
                                 
-                                // create a more about me field in parse 
-                                // might actually erase something you may have saved in the moreAboutMe column.
-                                // TODO: Will have to test later
+                                
+                                // test to make sure that the moreAboutMe column is empty before it's init
                                 if parseUser["moreAboutMe"] != nil {
                                     println("didn't erase moreAboutme")
                                 } else {
@@ -137,6 +137,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             }
         }
     }
+    
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
