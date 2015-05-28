@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -269,16 +269,45 @@
                     <view key="view" contentMode="scaleToFill" id="ne6-gW-4Xx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-Ik-bZQ">
+                                <rect key="frame" x="160" y="112" width="280" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-2X-exJ">
+                                        <rect key="frame" x="70" y="8" width="140" height="140"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="CFZ-8d-JWL"/>
+                                    <constraint firstAttribute="width" constant="280" id="cH7-DG-xul"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vAc-rf-psd" appends="YES" id="VkL-rW-BCG"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="YQh-Ik-bZQ" secondAttribute="centerX" id="3Ga-5X-9r3"/>
+                            <constraint firstAttribute="centerY" secondItem="YQh-Ik-bZQ" secondAttribute="centerY" constant="40" id="97g-tk-SHW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Match Me" id="zzD-LX-wTi">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="qDt-Jb-d71"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cardBackgroundView" destination="YQh-Ik-bZQ" id="O31-1a-deC"/>
+                        <outlet property="cardImage" destination="rHy-2X-exJ" id="Nno-Rv-KAq"/>
                         <outlet property="menuButton" destination="qDt-Jb-d71" id="0dw-sR-GgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtF-tx-jRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vAc-rf-psd">
+                    <connections>
+                        <action selector="cardWasDragged:" destination="vjV-pL-LZR" id="pdx-Yc-ACe"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3702" y="-285"/>
         </scene>

@@ -10,37 +10,48 @@ import UIKit
 import Foundation
 import CoreLocation
 
-class MainAppViewController: UIViewController, CLLocationManagerDelegate {
+// import the parse API to get the parse info
+import Bolts
+import Parse
+
+class MainAppViewController: UIViewController {
+    
+    enum CardSelectionState{
+        case NoSelection
+        case MakingSelection
+        case SwipingLeft
+        case SwipedLeft
+        case SwipingRight
+        case SwipedRight
+    }
+    
+    @IBOutlet weak var cardBackgroundView: UIView!
+  
+    
+    
+    var cardSelectionState:CardSelectionState = .NoSelection
+    @IBOutlet weak var cardImage: UIImageView!
+    
+    var frame: CGRect!
     var xFromCenter:CGFloat = 0
-    var imageView:UIImageView!
+
     let locationManager = CLLocationManager()
 
-    // assigne the menu button to the viewcontroller
+    // assign the menu button to the viewcontroller
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        frame = CGRectZero
         
-        imageView = UIImageView(frame: CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 100, 200, 200))
-        imageView.image = UIImage(named: "mario.jpg")
+        cardImage.image = UIImage(named: "mario.jpg")
         // giving the image a circle style
         // add a corner radius to our image
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2
-        imageView.clipsToBounds = true
-        self.view.addSubview(imageView)
-        
-        // add the gesture recognizer code
-        // add a gesture recogniser that pans the object
-        var gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
-        
-        // add the gesture to the imageView
-        imageView.addGestureRecognizer(gesture)
-        imageView.userInteractionEnabled = true
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-        }
-        
+        cardImage.layer.cornerRadius = cardImage.frame.size.width / 2
+        cardImage.clipsToBounds = true
+
+        // get the current location and sent to Parse
         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
             if let user = PFUser.currentUser() {
                 user["currentLocation"] = geoPoint
@@ -48,7 +59,7 @@ class MainAppViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
 
-        // Do any additional setup after loading the view.
+        // this code is for the SWRevealViewController Code API
         let revealVC = self.revealViewController()
         if revealVC != nil{
             menuButton.target = revealVC
@@ -57,89 +68,82 @@ class MainAppViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    // creating the function for wasDragged that passes in a UIPanGestureRecogniszer
-    func wasDragged(gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translationInView(self.view)
-        // get what has been dragged
-        var profile = gesture.view!
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        stylemMyCard()
+    }
+    
+    func stylemMyCard() {
+        cardBackgroundView.layer.cornerRadius = 5
+    
+    }
+    
+    @IBAction func cardWasDragged(sender: UIPanGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Began {
+            frame = sender.view?.frame
+        }
+        let translation = sender.translationInView(self.view)
+        // get was has been dragged
+        var profile = sender.view!
         xFromCenter += translation.x
-        var scale = min(100 / abs(xFromCenter), 1)
-        profile.center = CGPoint(x: profile.center.x + translation.x, y: profile.center.y + translation.y)
-        
+        var scale = min( 100 / abs(xFromCenter), 1)
+        profile.center = CGPoint(x: profile.center.x + translation.x, y: profile.center.y)
         // reset translation
-        gesture.setTranslation(CGPointZero, inView: self.view)
-        
-        // rotate the label/image
+        sender.setTranslation(CGPointZero, inView: self.view)
+        //rotate label
         var rotation:CGAffineTransform = CGAffineTransformMakeRotation(translation.x / 200)
-        // stretch the view
+        // stretch the current view
         var stretch:CGAffineTransform = CGAffineTransformScale(rotation, scale, scale)
-        // stretch the label/image
-        //        imageView.transform = stretch
-        // check whether or not someone is chosen
-        if profile.center.x < 100 {
-            println("not chosen")
+        //imageView.transform = stretch
+        // check if chosen or not chosen
+        if profile.center.x <  100 {
+            //println("not chose")
+            cardSelectionState = .SwipingLeft
             // do nothing
+            if profile.center.x <  20 {
+                cardSelectionState = .SwipedLeft
+            }
         } else {
-            println("chosen")
-            // we could add the chosen user to parse
+            //println("chosen")
+            cardSelectionState = .SwipingRight
+            // Add to chosen list on parse
+            if profile.center.x > 300 {
+                cardSelectionState = .SwipedRight
+            }
         }
-        // when the gesture state has ended
-        if gesture.state == UIGestureRecognizerState.Ended {
-            // set the label/image back
-            profile.center = CGPointMake(view.bounds.width / 2, view.bounds.height / 2)
+        if sender.state == UIGestureRecognizerState.Ended {
             
-            // undo the scale
-            scale = max(abs(xFromCenter) / 100, 1)
-            // undo any rotations
-            rotation = CGAffineTransformMakeRotation(0)
             
-            // stretch the current view back to normal
+            
+            // set the label back
+            //            profile.center = CGPointMake(view.bounds.width / 2, view.bounds.height / 2)
+            //            // undo scale
+            //            scale = max(abs(xFromCenter) / 100, 1)
+            //            // undo rotation and stretch
+            //            rotation = CGAffineTransformMakeRotation(0)
+            //            // stretch the current view
             //            stretch = CGAffineTransformScale(rotation, scale, scale)
+            //            // set image to original size after scaling
             
-            // set the label or image to the original size after scaling
-            imageView.frame = CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 100, 200, 200)
+            UIView.animateWithDuration(0.3, animations:
+                { () -> Void in
+                    profile.frame = self.frame
+                }, completion: {
+                    (success) -> Void in
+                    self.cardSelectionState = .NoSelection
+            })
+            
+            
         }
+        // TODO: load next image
         
     }
+    // creating the function for wasDragged that passes in a UIPanGestureRecogniszer
+   
 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    
-    func locationManager(manager: CLLocationManager!,
-        didChangeAuthorizationStatus status: CLAuthorizationStatus)
-    {
-        
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            manager.requestAlwaysAuthorization()
-        }
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            manager.requestWhenInUseAuthorization()
-        }
-        
-//        if status == .Authorized || status == .AuthorizedWhenInUse {
-//            locationManager.startUpdatingLocation()
-//            // ...
-//        }
-    }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
