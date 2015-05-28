@@ -41,6 +41,12 @@ class MainAppViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
+        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+            if let user = PFUser.currentUser() {
+                user["currentLocation"] = geoPoint
+                user.saveInBackground()
+            }
+        }
 
         // Do any additional setup after loading the view.
         let revealVC = self.revealViewController()

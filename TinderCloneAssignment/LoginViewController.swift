@@ -15,12 +15,14 @@ import Parse
 import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
+import CoreLocation
 
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     let loginButton = FBSDKLoginButton()
     let permissions = ["public_profile", "email", "user_friends"]
     let userDefauls = NSUserDefaults.standardUserDefaults()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
 
     }
+    
+    
+    // impliment the Facebook delegates
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In as a Facebook user")
@@ -100,6 +105,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                         
                                         
                                 }
+                                
+                                // save the user's location to parse before you save the information
+                                PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                                    if let user = PFUser.currentUser() {
+                                        user["currentLocation"] = geoPoint
+                                        user.saveInBackground()
+                                    }
+                                }
                                 parseUser.saveInBackground()
                                 println("Parse User Saved")
                             }
@@ -125,7 +138,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         }
     }
     
-    
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
         PFUser.logOut()
@@ -138,10 +150,4 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         self.performSegueWithIdentifier("showMainApp", sender: nil)
     }
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
