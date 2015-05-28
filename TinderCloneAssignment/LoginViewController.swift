@@ -85,7 +85,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 // TODO: Will have to test later
                                 if parseUser["moreAboutMe"] != nil {
                                     println("didn't erase moreAboutme")
-                                    return
                                 } else {
                                     parseUser["moreAboutMe"] = ""
                                     println("moreAboutMe reset")
