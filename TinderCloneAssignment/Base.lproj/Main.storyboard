@@ -28,7 +28,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="200" y="275" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -38,9 +38,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="200" id="0gS-wQ-T2i"/>
                             <constraint firstItem="VRy-jl-yqs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="99K-Wa-JQZ"/>
                             <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="iuY-Nm-sy2" secondAttribute="centerX" id="Cqk-zV-vvM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iuY-Nm-sy2" secondAttribute="bottom" constant="275" id="EJ8-rJ-Dul"/>
                             <constraint firstItem="VRy-jl-yqs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIJ-m4-LEg"/>
+                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w1L-FF-bF7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -385,8 +388,8 @@
                                     <action selector="saveInformationButtonPressed:" destination="9GV-5u-3z6" eventType="touchUpInside" id="bkh-9W-bYe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wn-yr-FfQ">
-                                <rect key="frame" x="23" y="502" width="109" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wn-yr-FfQ">
+                                <rect key="frame" x="21" y="502" width="109" height="30"/>
                                 <state key="normal" title="Edit Information">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -427,6 +430,7 @@
                             <constraint firstItem="9OA-qr-YIC" firstAttribute="top" secondItem="fYD-O5-SwR" secondAttribute="bottom" constant="8" symbolic="YES" id="fMW-oL-Faa"/>
                             <constraint firstItem="gSS-aU-mov" firstAttribute="top" secondItem="kFg-mw-pLF" secondAttribute="bottom" constant="38" id="gId-4f-h8J"/>
                             <constraint firstItem="0Th-SP-yAw" firstAttribute="top" secondItem="IWp-eJ-nKR" secondAttribute="bottom" id="hZw-wS-wZr"/>
+                            <constraint firstItem="Lcp-5j-4B1" firstAttribute="top" secondItem="Jgk-Rq-KF3" secondAttribute="bottom" constant="68" id="jdF-yy-VUI"/>
                             <constraint firstItem="Bxx-ir-j1v" firstAttribute="leading" secondItem="gSS-aU-mov" secondAttribute="leading" id="mkJ-0d-e64"/>
                             <constraint firstItem="Bxx-ir-j1v" firstAttribute="top" secondItem="gSS-aU-mov" secondAttribute="bottom" constant="7" id="qNu-IH-6Ev"/>
                             <constraint firstItem="0Th-SP-yAw" firstAttribute="centerX" secondItem="9OA-qr-YIC" secondAttribute="centerX" id="v3O-C7-wbY"/>
@@ -439,7 +443,6 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="3nA-1k-i7T"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomContraint" destination="960-vh-j9o" id="gco-IU-KVy"/>
                         <outlet property="customImage" destination="IPv-4A-JQw" id="gWE-cQ-1SB"/>
                         <outlet property="facebookImage" destination="ANW-Md-qVe" id="W3y-G3-d3Q"/>
                         <outlet property="menuButton" destination="3nA-1k-i7T" id="Zmr-u6-gYv"/>
