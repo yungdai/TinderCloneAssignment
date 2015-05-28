@@ -439,6 +439,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="3nA-1k-i7T"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomContraint" destination="960-vh-j9o" id="gco-IU-KVy"/>
                         <outlet property="customImage" destination="IPv-4A-JQw" id="gWE-cQ-1SB"/>
                         <outlet property="facebookImage" destination="ANW-Md-qVe" id="W3y-G3-d3Q"/>
                         <outlet property="menuButton" destination="3nA-1k-i7T" id="Zmr-u6-gYv"/>

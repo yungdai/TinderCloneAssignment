@@ -13,7 +13,7 @@ import AVFoundation
 import Bolts
 import Parse
 
-class MyInformationViewController: UIViewController {
+class MyInformationViewController: UIViewController, UITextViewDelegate {
     
 //    let userParse = User.self
 
@@ -25,6 +25,7 @@ class MyInformationViewController: UIViewController {
     @IBOutlet weak var customImage: UIImageView!
     @IBOutlet weak var moreAboutMeTextBox: UITextView!
     
+    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     @IBOutlet weak var parseUserName: UILabel!
     @IBOutlet weak var parseUserEmail: UILabel!
     
@@ -35,7 +36,20 @@ class MyInformationViewController: UIViewController {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            // set up NSNotificationCenter for the keyboard listener functions
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+
         }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+    }
+    
+    func keyboardWillHide(notificaiton: NSNotification) {
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,6 +74,8 @@ class MyInformationViewController: UIViewController {
         }
     }
     
+    
+    // enable and disable the UITextView box from being edited
     @IBAction func editInformationButtonPressed(sender: AnyObject) {
         self.moreAboutMeTextBox.editable = true
         
@@ -74,4 +90,29 @@ class MyInformationViewController: UIViewController {
         }
         println("User information is saved to Parse!")
     }
+    
+    
+    // move the UITextView up when you're about to type something into it.
+    
+//    func textViewDidBeginEditing(textView: UITextView) {
+//        animateViewMoving(true, moveValue: 100)
+//    }
+//    
+//    func textViewDidEndEditing(textView: UITextView) {
+//        animateViewMoving(false, moveValue: 100)
+//    }
+//    
+//    func animateViewMoving (up: Bool, moveValue: CGFloat) {
+//        var movementDuration: NSTimeInterval = 0.3
+//        var movement:CGFloat = (up? -moveValue: moveValue)
+//        UIView.beginAnimations("animateView", context: nil)
+//        UIView.setAnimationBeginsFromCurrentState(true)
+//        UIView.setAnimationDuration(movementDuration)
+//        self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+//        UIView.commitAnimations()
+//    }
+    
+    
+    
+    
 }
