@@ -133,9 +133,6 @@ class MainAppViewController: UIViewController {
             }
         }
         if sender.state == UIGestureRecognizerState.Ended {
-            
-            
-            
             // set the label back
             //            profile.center = CGPointMake(view.bounds.width / 2, view.bounds.height / 2)
             //            // undo scale
@@ -159,10 +156,7 @@ class MainAppViewController: UIViewController {
         // TODO: load next image
         
     }
-    // creating the function for wasDragged that passes in a UIPanGestureRecogniszer
-   
 
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
