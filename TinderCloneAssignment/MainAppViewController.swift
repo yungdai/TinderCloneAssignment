@@ -85,7 +85,7 @@ class MainAppViewController: UIViewController {
         if revealVC != nil{
             menuButton.target = revealVC
             menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
     
