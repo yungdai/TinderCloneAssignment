@@ -15,14 +15,12 @@ import Parse
 import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
-import CoreLocation
 
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     let loginButton = FBSDKLoginButton()
     let permissions = ["public_profile", "email", "user_friends"]
     let userDefauls = NSUserDefaults.standardUserDefaults()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +46,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
 
     }
     
-    
-    // impliment the Facebook delegates
-    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In as a Facebook user")
         
@@ -69,10 +64,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                 if let parseUser = user {
                     if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
-                        
                     } else {
                         println("User logged in through Facebook!")
-                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,gender,email,name,picture", parameters: nil)
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=email,name,picture", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
@@ -85,10 +79,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 // save the facebook name and email data to parseUser
                                 parseUser["name"] = result["name"]
                                 parseUser["email"] = result["email"]
-                                parseUser["first_name"] = result["first_name"]
-                                parseUser["gender"] = result["gender"]
                                 
-                                // test to make sure that the moreAboutMe column is empty before it's init
+                                // create a more about me field in parse 
+                                // might actually erase something you may have saved in the moreAboutMe column.
+                                // TODO: Will have to test later
                                 if parseUser["moreAboutMe"] != nil {
                                     println("didn't erase moreAboutme")
                                 } else {
@@ -105,14 +99,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                         parseUser["photo"] = picture
                                         
                                         
-                                }
-                                
-                                // save the user's location to parse before you save the information
-                                PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
-                                    if let user = PFUser.currentUser() {
-                                        user["currentLocation"] = geoPoint
-                                        user.saveInBackground()
-                                    }
                                 }
                                 parseUser.saveInBackground()
                                 println("Parse User Saved")
@@ -152,4 +138,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
         self.performSegueWithIdentifier("showMainApp", sender: nil)
     }
 
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }
