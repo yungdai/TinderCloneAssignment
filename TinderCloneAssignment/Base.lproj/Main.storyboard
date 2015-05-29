@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -269,16 +269,79 @@
                     <view key="view" contentMode="scaleToFill" id="ne6-gW-4Xx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-Ik-bZQ">
+                                <rect key="frame" x="160" y="112" width="280" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-2X-exJ">
+                                        <rect key="frame" x="70" y="8" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="3un-pH-O5x"/>
+                                            <constraint firstAttribute="width" constant="140" id="v7b-qw-KYP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-EA-kN5">
+                                        <rect key="frame" x="8" y="156" width="264" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-Uj-UWN">
+                                        <rect key="frame" x="8" y="184" width="264" height="109"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="CFZ-8d-JWL"/>
+                                    <constraint firstAttribute="width" constant="280" id="cH7-DG-xul"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vAc-rf-psd" appends="YES" id="VkL-rW-BCG"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="xButton" translatesAutoresizingMaskIntoConstraints="NO" id="aL9-z0-anH">
+                                <rect key="frame" x="160" y="456" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Sdv-mQ-zq3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkButton" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-nY-bOB">
+                                <rect key="frame" x="340" y="456" width="100" height="100"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aL9-z0-anH" firstAttribute="leading" secondItem="YQh-Ik-bZQ" secondAttribute="leading" id="07N-Go-PtI"/>
+                            <constraint firstAttribute="centerX" secondItem="YQh-Ik-bZQ" secondAttribute="centerX" id="3Ga-5X-9r3"/>
+                            <constraint firstAttribute="centerY" secondItem="YQh-Ik-bZQ" secondAttribute="centerY" constant="40" id="97g-tk-SHW"/>
+                            <constraint firstItem="rRX-nY-bOB" firstAttribute="bottom" secondItem="aL9-z0-anH" secondAttribute="bottom" id="H5o-B7-xHE"/>
+                            <constraint firstItem="rRX-nY-bOB" firstAttribute="trailing" secondItem="YQh-Ik-bZQ" secondAttribute="trailing" id="Lok-zw-mho"/>
+                            <constraint firstItem="cFk-jv-sBr" firstAttribute="top" secondItem="aL9-z0-anH" secondAttribute="bottom" constant="44" id="lF7-TF-CSR"/>
+                            <constraint firstItem="aL9-z0-anH" firstAttribute="top" secondItem="YQh-Ik-bZQ" secondAttribute="bottom" constant="44" id="qmT-F5-Uo4"/>
+                            <constraint firstItem="aL9-z0-anH" firstAttribute="top" secondItem="rRX-nY-bOB" secondAttribute="top" id="sxY-Bb-5sS"/>
+                            <constraint firstItem="rRX-nY-bOB" firstAttribute="leading" secondItem="aL9-z0-anH" secondAttribute="trailing" constant="80" id="y5z-Pu-CF0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Match Me" id="zzD-LX-wTi">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="qDt-Jb-d71"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cardBackgroundView" destination="YQh-Ik-bZQ" id="O31-1a-deC"/>
+                        <outlet property="cardImage" destination="rHy-2X-exJ" id="Nno-Rv-KAq"/>
                         <outlet property="menuButton" destination="qDt-Jb-d71" id="0dw-sR-GgH"/>
+                        <outlet property="moreAboutMeBox" destination="aPd-Uj-UWN" id="4Ij-l3-q0R"/>
+                        <outlet property="nameLabel" destination="m0N-EA-kN5" id="Pi1-i2-sxd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtF-tx-jRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vAc-rf-psd">
+                    <connections>
+                        <action selector="cardWasDragged:" destination="vjV-pL-LZR" id="pdx-Yc-ACe"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3702" y="-285"/>
         </scene>
@@ -488,7 +551,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkButton" width="120" height="120"/>
         <image name="menu" width="22" height="22"/>
+        <image name="xButton" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9l9-Aj-PfD"/>
