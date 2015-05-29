@@ -35,6 +35,7 @@
 		1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */; };
 		1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11251B13C65100DF12E7 /* Accounts.framework */; };
 		1AAC11281B13C65C00DF12E7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */; };
+		1ADD15871B18FD9E009F8364 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADD15861B18FD9E009F8364 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneAssignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AAC11251B13C65100DF12E7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1AAC11271B13C65C00DF12E7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1ADD15861B18FD9E009F8364 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADD15871B18FD9E009F8364 /* Social.framework in Frameworks */,
 				1AAC11281B13C65C00DF12E7 /* CFNetwork.framework in Frameworks */,
 				1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */,
 				1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */,
@@ -123,6 +126,7 @@
 		1A2B44E51B1391A600F4EC12 = {
 			isa = PBXGroup;
 			children = (
+				1ADD15861B18FD9E009F8364 /* Social.framework */,
 				1A2B44F01B1391A600F4EC12 /* TinderCloneAssignment */,
 				1A2B45061B1391A700F4EC12 /* TinderCloneAssignmentTests */,
 				1A2B44EF1B1391A600F4EC12 /* Products */,
@@ -283,6 +287,7 @@
 				TargetAttributes = {
 					1A2B44ED1B1391A600F4EC12 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = W9YJQYCY2W;
 					};
 					1A2B45021B1391A700F4EC12 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -469,8 +474,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yung Dai (464E9UVXCG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yung Dai (464E9UVXCG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -478,6 +483,7 @@
 				INFOPLIST_FILE = TinderCloneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = TinderCloneAssignment.h;
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
 			};
@@ -487,7 +493,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yung Dai (464E9UVXCG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -495,6 +502,7 @@
 				INFOPLIST_FILE = TinderCloneAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = TinderCloneAssignment.h;
 			};
 			name = Release;
