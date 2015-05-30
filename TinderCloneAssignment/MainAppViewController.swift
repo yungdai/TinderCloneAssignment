@@ -27,10 +27,11 @@ class MainAppViewController: UIViewController {
     @IBOutlet weak var cardBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var moreAboutMeBox: UITextView!
-    @IBOutlet weak var noButton: UIImageView!
-    @IBOutlet weak var yesButton: UIImageView!
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
     
-    var matchesMade = []
+    
+    var cardDeck = []
     var currentMatchIndex = 1
     var currentMatch: String?
     var listOfRequests = []
@@ -108,8 +109,8 @@ class MainAppViewController: UIViewController {
         kQuery.findObjectsInBackgroundWithBlock { (users: [AnyObject]? , error: NSError?) -> Void in
             if (error != nil) {
                 // take the current array of user objects and assign them to matchesMade
-                self.matchesMade = users!
-                let closestUser: AnyObject = self.matchesMade
+                self.cardDeck = users!
+                let closestUser: AnyObject = self.cardDeck
                 let name = closestUser["first_name"] as? String
                 let photo = closestUser["photo"] as? String
                 let photoURL = NSURL(string: photo!)
@@ -152,7 +153,7 @@ class MainAppViewController: UIViewController {
         profile.center = CGPoint(x: profile.center.x + translation.x, y: profile.center.y)
         // reset translation
         sender.setTranslation(CGPointZero, inView: self.view)
-        //rotate label
+        //rotate card
         var rotation:CGAffineTransform = CGAffineTransformMakeRotation(translation.x / 200)
         // stretch the current view
         var stretch:CGAffineTransform = CGAffineTransformScale(rotation, scale, scale)
@@ -185,7 +186,7 @@ class MainAppViewController: UIViewController {
                         case .SwipingLeft:
                             println("Swiping Left")
                         case .SwipedLeft:
-                            self.nopeSelected() // need to create the nopeSelected function
+                            self.noSelected() // need to create the nopeSelected function
                         case .SwipingRight:
                             println("Swiping Right")
                         case .SwipedRight:
@@ -200,6 +201,38 @@ class MainAppViewController: UIViewController {
         // TODO: load next image
         
     }
+    
+    
+    @IBAction func noButtonPressed(sender: UIButton) {
+        noSelected()
+    }
+    
+    func noSelected () {
+        if self.currentMatchIndex < self.cardDeck.count - 1 { // check for check to make sure
+            self.checkForMatches(self.currentMatchIndex + 1, aroundGeopoint: self.currentLocation!)
+    
+        } else {
+            var alert = UIAlertController(title: "Hey!", message: "There's no more people in the deck!", preferredStyle: UIAlertControllerStyle.Alert)
+        }
+        
+    }
+    
+    
+    @IBAction func okayButtonPressed(sender: UIButton) {
+        okSelected()
+    }
+    
+    func okSelected() {
+        if let user = PFUser.currentUser() {
+            var request = PFObject(className: "requestPool")
+            request.addObject(user.objectId!, forKey: "senderID")
+            request.addObject(self.currentMatch!, forKey: "receiverID")
+            request.addObject(false, forKey: "State")
+            request.saveInBackground()
+        }
+    }
+    
+    
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

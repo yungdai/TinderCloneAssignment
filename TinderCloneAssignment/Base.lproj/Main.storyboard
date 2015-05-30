@@ -302,27 +302,33 @@
                                     <outletCollection property="gestureRecognizers" destination="vAc-rf-psd" appends="YES" id="VkL-rW-BCG"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="xButton" translatesAutoresizingMaskIntoConstraints="NO" id="aL9-z0-anH">
-                                <rect key="frame" x="160" y="456" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Sdv-mQ-zq3"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkButton" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-nY-bOB">
-                                <rect key="frame" x="340" y="456" width="100" height="100"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfI-vk-7b2">
+                                <rect key="frame" x="160" y="439" width="120" height="120"/>
+                                <state key="normal" image="xButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="noButtonPressed:" destination="vjV-pL-LZR" eventType="touchUpInside" id="pq5-zh-L3A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Ng-aQy">
+                                <rect key="frame" x="320" y="439" width="120" height="120"/>
+                                <state key="normal" image="checkButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="okayButtonPressed:" destination="vjV-pL-LZR" eventType="touchUpInside" id="omY-at-N9I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aL9-z0-anH" firstAttribute="leading" secondItem="YQh-Ik-bZQ" secondAttribute="leading" id="07N-Go-PtI"/>
+                            <constraint firstItem="ogy-Ng-aQy" firstAttribute="trailing" secondItem="YQh-Ik-bZQ" secondAttribute="trailing" id="16L-a7-oMW"/>
                             <constraint firstAttribute="centerX" secondItem="YQh-Ik-bZQ" secondAttribute="centerX" id="3Ga-5X-9r3"/>
                             <constraint firstAttribute="centerY" secondItem="YQh-Ik-bZQ" secondAttribute="centerY" constant="40" id="97g-tk-SHW"/>
-                            <constraint firstItem="rRX-nY-bOB" firstAttribute="bottom" secondItem="aL9-z0-anH" secondAttribute="bottom" id="H5o-B7-xHE"/>
-                            <constraint firstItem="rRX-nY-bOB" firstAttribute="trailing" secondItem="YQh-Ik-bZQ" secondAttribute="trailing" id="Lok-zw-mho"/>
-                            <constraint firstItem="cFk-jv-sBr" firstAttribute="top" secondItem="aL9-z0-anH" secondAttribute="bottom" constant="44" id="lF7-TF-CSR"/>
-                            <constraint firstItem="aL9-z0-anH" firstAttribute="top" secondItem="YQh-Ik-bZQ" secondAttribute="bottom" constant="44" id="qmT-F5-Uo4"/>
-                            <constraint firstItem="aL9-z0-anH" firstAttribute="top" secondItem="rRX-nY-bOB" secondAttribute="top" id="sxY-Bb-5sS"/>
-                            <constraint firstItem="rRX-nY-bOB" firstAttribute="leading" secondItem="aL9-z0-anH" secondAttribute="trailing" constant="80" id="y5z-Pu-CF0"/>
+                            <constraint firstItem="CfI-vk-7b2" firstAttribute="leading" secondItem="YQh-Ik-bZQ" secondAttribute="leading" id="Bm9-n8-mbw"/>
+                            <constraint firstItem="CfI-vk-7b2" firstAttribute="top" secondItem="YQh-Ik-bZQ" secondAttribute="bottom" constant="27" id="MEY-Rz-f5j"/>
+                            <constraint firstItem="CfI-vk-7b2" firstAttribute="top" secondItem="ogy-Ng-aQy" secondAttribute="top" id="UFa-jc-1Gx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Match Me" id="zzD-LX-wTi">
@@ -331,11 +337,11 @@
                     <connections>
                         <outlet property="cardBackgroundView" destination="YQh-Ik-bZQ" id="O31-1a-deC"/>
                         <outlet property="cardImage" destination="rHy-2X-exJ" id="Nno-Rv-KAq"/>
+                        <outlet property="checkButton" destination="ogy-Ng-aQy" id="7fF-PL-oeC"/>
                         <outlet property="menuButton" destination="qDt-Jb-d71" id="0dw-sR-GgH"/>
                         <outlet property="moreAboutMeBox" destination="aPd-Uj-UWN" id="4Ij-l3-q0R"/>
                         <outlet property="nameLabel" destination="m0N-EA-kN5" id="Pi1-i2-sxd"/>
-                        <outlet property="noButton" destination="aL9-z0-anH" id="wx5-I3-utR"/>
-                        <outlet property="yesButton" destination="rRX-nY-bOB" id="syz-GX-OgN"/>
+                        <outlet property="noButton" destination="CfI-vk-7b2" id="L9q-V1-fRO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtF-tx-jRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
