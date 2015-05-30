@@ -125,7 +125,7 @@ class MainAppViewController: UIViewController {
                     })
                 })
             } else {
-                println("Ooops there's an error")
+                println("Ooops there's an error, because I couldn't get anyone near you")
                 println(error?.description)
             }
         }
