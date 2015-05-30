@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -334,6 +334,8 @@
                         <outlet property="menuButton" destination="qDt-Jb-d71" id="0dw-sR-GgH"/>
                         <outlet property="moreAboutMeBox" destination="aPd-Uj-UWN" id="4Ij-l3-q0R"/>
                         <outlet property="nameLabel" destination="m0N-EA-kN5" id="Pi1-i2-sxd"/>
+                        <outlet property="noButton" destination="aL9-z0-anH" id="wx5-I3-utR"/>
+                        <outlet property="yesButton" destination="rRX-nY-bOB" id="syz-GX-OgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtF-tx-jRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
