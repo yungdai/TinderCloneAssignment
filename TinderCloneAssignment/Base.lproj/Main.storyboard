@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to my Tinder Clone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to my Tinder Clone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-jl-yqs">
                                 <rect key="frame" x="9" y="116" width="575" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="8yr-Su-HhD"/>
@@ -28,25 +28,31 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuY-Nm-sy2" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="16" y="275" width="568" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltb-Sg-o7h" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="330" width="568" height="46"/>
+                                <state key="normal" image="facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="db7-fI-7jb"/>
+                                    <action selector="facebookButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zF7-ru-eim"/>
                                 </connections>
-                            </view>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlX-qm-w5P">
+                                <rect key="frame" x="9" y="216" width="575" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VRy-jl-yqs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="4tv-kX-WYg"/>
-                            <constraint firstItem="VRy-jl-yqs" firstAttribute="trailing" secondItem="iuY-Nm-sy2" secondAttribute="trailing" id="Iyd-kj-NEa"/>
-                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bUv-xj-Kxm"/>
-                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l5c-rb-nH4"/>
-                            <constraint firstItem="iuY-Nm-sy2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xbN-aI-yBm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorMessage" destination="TlX-qm-w5P" id="yH9-Z6-9eX"/>
                         <segue destination="6BG-Oh-qkc" kind="presentation" identifier="showMainApp" id="rlk-tR-U43"/>
+                        <segue destination="CH6-c7-HKj" kind="presentation" identifier="signUpPage" id="Di8-Ui-q5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,7 +95,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQE-rF-ep5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="441"/>
+            <point key="canvasLocation" x="1450" y="455"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="hmC-Gg-Ffd">
+            <objects>
+                <viewController id="CH6-c7-HKj" customClass="SignUpViewController" customModule="TinderCloneAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oY9-qy-USI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kev-Mt-BWz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IJq-Wc-77q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up with this App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-vP-Dvv">
+                                <rect key="frame" x="217" y="71" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjx-Ch-oOI">
+                                <rect key="frame" x="277" y="515" width="55" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUp:" destination="CH6-c7-HKj" eventType="touchUpInside" id="gvd-U2-VcM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arX-wS-jjB">
+                                <rect key="frame" x="118" y="118" width="373" height="384"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImage" destination="arX-wS-jjB" id="JAS-eZ-d39"/>
+                        <segue destination="6BG-Oh-qkc" kind="presentation" identifier="signedUp" id="apj-B8-2zV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UoZ-Ns-wOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="1295"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="qMe-Kh-AkN">
@@ -560,10 +608,12 @@
     </scenes>
     <resources>
         <image name="checkButton" width="120" height="120"/>
+        <image name="facebook" width="202" height="46"/>
         <image name="menu" width="22" height="22"/>
         <image name="xButton" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9l9-Aj-PfD"/>
+        <segue reference="rlk-tR-U43"/>
+        <segue reference="2LM-L3-Lcc"/>
     </inferredMetricsTieBreakers>
 </document>
