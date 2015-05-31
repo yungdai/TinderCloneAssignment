@@ -174,7 +174,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
                                     picture = pictureData["url"] as? String {
-                                        parseUser["photo"] = picture       
+                                        parseUser["photo"] = picture
+        
                                 }
                                 
                                 // save the user's location to parse before you save the information
