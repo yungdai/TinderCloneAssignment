@@ -19,8 +19,12 @@ import CoreLocation
 
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
+    
     let loginButton = FBSDKLoginButton()
     let permissions = ["public_profile", "email", "user_friends"]
+
+    var user = PFUser.currentUser()
+
 
     
     // setup the parse user
@@ -93,12 +97,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             // Show the signup or login screen
             return
         }
-        loginButton.readPermissions = permissions
+
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             println("User is already logged in go to the next viewcontroller")
 
         }
+        
+        
     }
     
     
@@ -144,6 +150,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                         println("User signed up and logged in through Facebook!")
                     } else {
                         println("User logged in through Facebook WITH PERMISSIONS!")
+                        
+                        
                         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,gender,email,name,picture.width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
@@ -167,8 +175,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
                                     parseUser["moreAboutMe"] = ""
                                     println("moreAboutMe reset")
                                 }
-                                
-                                // sending the data to NSUserDefaults as well
                                 
                                 // sending the facebook picture to parse as a string
                                 if let pictureResult = result["picture"] as? NSDictionary,
@@ -199,96 +205,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
             
             println("Putting the user to parse!")
             
-//            PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block: {
-//                (user: PFUser?, error: NSError?) -> Void in
-//                if let parseUser = user {
-//        
-//
-//                    if parseUser.isNew {
-//                        println("User signed up and logged in through Facebook!")
-//                        
-//                    } else {
-//                        println("User logged in through Facebook!")
-//                        
-//                        
-//                    }
-//                    self.gotoMainScreen()
-//                } else {
-//                    
-//                    
-//                    println("Uh oh. The user cancelled the Facebook login.")
-//                }
-//            })
-//                    println("Permission was allowed go to the next view")
-//            // If you ask for multiple permissions at once, you
-//            // should check if specific permissions missing
-//            if result.grantedPermissions.contains("email")
-//            {
-//                println("access to user's email was granted")
-//                // print this out if the email was granted
-//               
-//            }
+
         }
 
     
     }
     
-//    func requestGraphDataForPath(graphPath:String, completion:(Dictionary<String,AnyObject>) -> Void) {
-//        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: nil)
-//        graphRequest.startWithCompletionHandler({
-//            (connection, result, error) -> Void in
-//            if (error != nil)
-//            {
-//                // display the error message
-//                println("Error: \(error)")
-//                completion(["":""])
-//            } else
-//            {
-//                if let dictionary = result as? Dictionary<String,AnyObject> {
-//                    completion(dictionary)
-//                } else {
-//                    completion(["":""])
-//                }
-////                var test = result as Dictionary<String,AnyObject>
-////                completion(test)
-//                // parsing the facebook data from the graph API and saving it to parse
-//                // save the facebook name and email data to parseUser
-//                //parseUser["name"] = result["name"]
-//                //parseUser["email"] = result["email"]
-//                //parseUser["first_name"] = result["first_name"]
-//                //parseUser["gender"] = result["gender"]
-//                
-//                // test to make sure that the moreAboutMe column is empty before it's init
-////                if parseUser["moreAboutMe"] != nil {
-////                    println("didn't erase moreAboutme")
-////                } else {
-////                    parseUser["moreAboutMe"] = ""
-////                    println("moreAboutMe reset")
-////                }
-//                
-//                // sending the facebook picture to parse as a string
-////                if let pictureResult = result["picture"] as? NSDictionary,
-////                    pictureData = pictureResult["data"] as? NSDictionary,
-////                    picture = pictureData["url"] as? String {
-////                        parseUser["photo"] = picture
-////                        
-////                        
-////                }
-////                
-//                // save the user's location to parse before you save the information
-//                PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
-//                    if let user = PFUser.currentUser() {
-//                        user["currentLocation"] = geoPoint
-//                        user.saveInBackground()
-//                    }
-//                }
-//                //parseUser.saveInBackground()
-//                println("Parse User Saved")
-//                
-//            }
-//        })
-//
-//    }
+
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User Logged Out")
