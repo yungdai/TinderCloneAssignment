@@ -31,7 +31,6 @@
 		1AAC11191B13BC8F00DF12E7 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */; };
 		1AAC111B1B13BC9A00DF12E7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */; };
 		1AAC111D1B13BCA800DF12E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111C1B13BCA800DF12E7 /* Security.framework */; };
-		1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */; };
 		1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */; };
 		1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */; };
 		1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAC11251B13C65100DF12E7 /* Accounts.framework */; };
@@ -80,7 +79,6 @@
 		1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1AAC111C1B13BCA800DF12E7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1AAC11241B13BD6000DF12E7 /* TinderCloneAssignmentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneAssignmentTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				1AAC11261B13C65100DF12E7 /* Accounts.framework in Frameworks */,
 				1AAC11231B13BD0200DF12E7 /* AudioToolbox.framework in Frameworks */,
 				1AAC11211B13BCD600DF12E7 /* CoreLocation.framework in Frameworks */,
-				1AAC111F1B13BCBD00DF12E7 /* StoreKit.framework in Frameworks */,
 				1AAC111D1B13BCA800DF12E7 /* Security.framework in Frameworks */,
 				1AAC111B1B13BC9A00DF12E7 /* libsqlite3.dylib in Frameworks */,
 				1AAC11191B13BC8F00DF12E7 /* libz.1.1.3.dylib in Frameworks */,
@@ -202,7 +199,6 @@
 				1AAC11251B13C65100DF12E7 /* Accounts.framework */,
 				1AAC11221B13BD0200DF12E7 /* AudioToolbox.framework */,
 				1AAC11201B13BCD600DF12E7 /* CoreLocation.framework */,
-				1AAC111E1B13BCBD00DF12E7 /* StoreKit.framework */,
 				1AAC111C1B13BCA800DF12E7 /* Security.framework */,
 				1AAC111A1B13BC9A00DF12E7 /* libsqlite3.dylib */,
 				1AAC11181B13BC8F00DF12E7 /* libz.1.1.3.dylib */,
@@ -291,6 +287,11 @@
 					1A2B44ED1B1391A600F4EC12 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = W9YJQYCY2W;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					1A2B45021B1391A700F4EC12 = {
 						CreatedOnToolsVersion = 6.3.2;
